@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 80px;
+  gap: 20px;
+}
+
+.title {
+  font-family: Comfortaa;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 45px;
+}
+
+.currencies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.currencies-title {
+  font-family: Comfortaa;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 29px;
+  margin-bottom: 20px;
+}
+
+.sort {
+  align-items: center;
+  display: flex;
+  gap: 15px;
+}
+
+.sort-title {
+  color: var(--text);
+  font-family: Nunito;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.select {
+  background-color: initial;
+  border: none;
+  color: #fff;
+  outline: transparent;
+  width: 100px;
+  font-family: Nunito;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.select option {
+  background-color: var(--bgcolor);
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.preloader-container {
+  align-items: center;
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+  }
+
+  .currencies-title {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+
+  .list {
+    margin-top: 20px;
+  }
+}

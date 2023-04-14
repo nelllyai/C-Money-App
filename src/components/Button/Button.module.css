@@ -1,0 +1,96 @@
+.button {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(87.4deg,
+      #2e00b1 -11.74%,
+      #8100bd 48.81%,
+      #a400be 113.27%);
+  border: none;
+  border-radius: 10px;
+  z-index: 2;
+  font-family: Nunito;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+  color: #fff;
+  transition: background .3s;
+}
+
+.button:hover::before {
+  opacity: 1;
+}
+
+.button:focus::after {
+  opacity: 1;
+}
+
+.button:active::before,
+.button:active::after {
+  opacity: 0;
+}
+
+.button:active {
+  background: #2E00B1;
+}
+
+.button::before,
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.button::before {
+  background: linear-gradient(88.2deg, #A400BE -14.85%, #8100BD 50.2%, #2E00B1 115.25%, #2E00B1 115.25%);
+}
+
+.button::after {
+  background: linear-gradient(88.2deg, #2E00B1 -14.85%, #A400BE 50.2%, #2E00B1 115.25%, #2E00B1 115.25%);
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.padding-vertical-12 {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.padding-vertical-22 {
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+.padding-horizontal-30 {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.padding-horizontal-143 {
+  padding-left: 143px;
+  padding-right: 143px;
+}
+
+.margin-bottom-50 {
+  margin-bottom: 50px;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .xs-margin-bottom-10 {
+    margin-bottom: 10px;
+  }
+}

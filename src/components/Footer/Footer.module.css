@@ -1,0 +1,21 @@
+.footer {
+  bottom: 50px;
+  position: absolute;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .copy {
+    font-size: 14px;
+  }
+
+  .footer {
+    bottom: 20px;
+  }
+}

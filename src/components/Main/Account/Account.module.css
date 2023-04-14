@@ -1,0 +1,120 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 65px;
+}
+
+.container-header {
+  align-items: center;
+  display: flex;
+  flex-basis: 100%;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.title {
+  font-family: Comfortaa;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.dynamic {
+  background: var(--header);
+  border-radius: 10px;
+  margin-top: 50px;
+  max-height: 330px;
+  padding: 20px;
+  width: 580px;
+}
+
+.dynamic-header {
+  align-items: center;
+  display: flex;
+}
+
+.dynamic-title {
+  font-family: Nunito;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 27px;
+  margin-right: 20px;
+}
+
+.dynamic-year {
+  color: var(--text);
+  font-family: Nunito;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.dynamic-select {
+  background-color: initial;
+  border: none;
+  color: var(--text);
+  margin-left: auto;
+  outline: transparent;
+}
+
+.dynamic-select option {
+  background-color: var(--header);
+}
+
+.button {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  padding: 12px 30px;
+}
+
+.history {
+  max-width: 580px;
+}
+
+.history-title {
+  font-family: Comfortaa;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 29px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .container-header {
+    flex-direction: column-reverse;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+
+  .button {
+    font-size: 16px;
+    padding: 15px 30px;
+  }
+
+  .dynamic {
+    margin-bottom: 30px;
+    margin-top: 0;
+  }
+
+  .history {
+    margin-bottom: 30px;
+    max-width: 100%;
+  }
+
+  .history-title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
