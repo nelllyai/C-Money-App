@@ -48,11 +48,12 @@
 @media (max-width: 768px) {
   .container {
     max-height: 300px;
-    max-width: 100%;
+    width: 100%;
+    overflow-x: auto;
   }
 
   .table {
-    max-width: 100%;
+    width: 100%;
     padding: 5px;
   }
 

@@ -4,7 +4,7 @@ import style from './List.module.css';
 import { useEffect, useState } from 'react';
 import { accountsCreateAsync, accountsRequestAsync } from '../../../store/accounts/accountsActions';
 import selectSort from '../../../utils/sortAccounts';
-import { Button } from '../../Button/Button';
+import Button from '../../../UI/Button';
 
 export const List = () => {
   const loading = useSelector(state => state.accounts.loading);

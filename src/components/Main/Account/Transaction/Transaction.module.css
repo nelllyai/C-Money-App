@@ -1,17 +1,6 @@
-.transaction {
-  display: flex;
-  flex-direction: column;
-  margin-top: 40px;
-  width: 100%;
-}
-
-.title {
-  margin-bottom: 40px;
-}
-
 .form {
-  align-items: flex-end;
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 20px;
 }
@@ -19,6 +8,7 @@
 .input-wrapper {
   display: flex;
   flex-direction: column;
+  min-width: 260px;
   width: 380px;
 }
 
@@ -40,19 +30,18 @@
 }
 
 @media (max-width: 768px) {
-  .transaction {
-    margin-top: 0;
-  }
-  .title {
-    font-size: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
   .form {
     flex-direction: column;
     gap: 15px;
   }
+
   .input-wrapper {
-    max-width: 100%;
+    min-width: auto;
+    max-width: none;
+    width: 100%;
+  }
+
+  .input {
+    width: 100%;
   }
 }

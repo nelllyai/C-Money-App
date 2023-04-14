@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { tokenRequestAsync } from '../../../store/token/tokenActions';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../../Button/Button';
+import Button from '../../../UI/Button';
 
 export const Login = () => {
   const token = useSelector(state => state.token.token);
