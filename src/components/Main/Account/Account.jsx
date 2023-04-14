@@ -6,6 +6,7 @@ import Button from '../../../UI/Button';
 import style from './Account.module.css';
 import Table from './Table';
 import Transaction from './Transaction';
+import LineChart from './LineChart';
 
 export const Account = () => {
   const { id } = useParams();
@@ -62,6 +63,8 @@ export const Account = () => {
                   <option>2020</option>
                 </select>
               </div>
+
+              <LineChart transactions={transactions} />
             </div>
 
             <div className={style.history}>
