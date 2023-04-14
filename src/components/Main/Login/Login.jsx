@@ -47,7 +47,6 @@ export const Login = () => {
                   message: 'Некорректный логин'
                 }
               })}
-              className={style.input}
             />
           </div>
 
@@ -65,7 +64,6 @@ export const Login = () => {
                 }
               })}
               type="password"
-              className={style.input}
             />
           </div>
 
