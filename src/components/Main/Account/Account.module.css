@@ -21,48 +21,6 @@
   line-height: 29px;
 }
 
-.dynamic {
-  background: var(--header);
-  border-radius: 10px;
-  margin-top: 50px;
-  max-height: 330px;
-  padding: 20px;
-  width: 580px;
-}
-
-.dynamic-header {
-  align-items: center;
-  display: flex;
-}
-
-.dynamic-title {
-  font-family: Nunito;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 27px;
-  margin-right: 20px;
-}
-
-.dynamic-year {
-  color: var(--text);
-  font-family: Nunito;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 20px;
-}
-
-.dynamic-select {
-  background-color: initial;
-  border: none;
-  color: var(--text);
-  margin-left: auto;
-  outline: transparent;
-}
-
-.dynamic-select option {
-  background-color: var(--header);
-}
-
 .history {
   max-width: 580px;
 }
@@ -102,11 +60,6 @@
 
   .title {
     font-size: 16px;
-  }
-
-  .dynamic {
-    margin-top: 0;
-    width: 100%;
   }
 
   .history {

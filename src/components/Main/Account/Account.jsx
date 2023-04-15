@@ -6,7 +6,7 @@ import Button from '../../../UI/Button';
 import style from './Account.module.css';
 import Table from './Table';
 import Transaction from './Transaction';
-import LineChart from './LineChart';
+import Dynamic from './Dynamic';
 
 export const Account = () => {
   const { id } = useParams();
@@ -52,20 +52,9 @@ export const Account = () => {
         loading || !account ?
           <p>Загрузка...</p> :
           <>
-            <div className={style.dynamic}>
-              <div className={style['dynamic-header']}>
-                <h3 className={style['dynamic-title']}>Динамика</h3>
-                <span className={style['dynamic-year']}>2022</span>
-                <select className={style['dynamic-select']}>
-                  <option hidden="">Год</option>
-                  <option>2022</option>
-                  <option>2021</option>
-                  <option>2020</option>
-                </select>
-              </div>
-
-              <LineChart transactions={transactions} />
-            </div>
+            {
+              transactions.length > 0 && <Dynamic transactions={transactions} />
+            }
 
             <div className={style.history}>
               <h3 className={style['history-title']}>История переводов</h3>

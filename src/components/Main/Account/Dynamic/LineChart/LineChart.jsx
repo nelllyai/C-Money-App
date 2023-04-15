@@ -5,10 +5,9 @@ import {
   LinearScale,
   PointElement,
   LineElement,
-  Title,
   Tooltip,
-  Legend,
 } from 'chart.js';
+import { useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 
 ChartJS.register(
@@ -38,21 +37,23 @@ const data = {
 };
 
 
-export const LineChart = ({ transactions }) => {
+export const LineChart = ({ year, transactions }) => {
+  data.datasets[0].data = [];
+
   data.datasets[0].data = transactions
-    .filter(tr => new Date(tr.date).getFullYear() === 2021)
+    .filter(tr => new Date(tr.date).getFullYear() === year)
     .map(tr => {
       const date = tr.date;
       const month = new Date(date).toLocaleString('default', { month: 'short' });
       return { x: month, y: tr.amount }
-  });
+    });
 
   return (
-    <div>
-      <Line
-        // options={options}
-        data={data}
-      />
-    </div>
+    <Line
+      key={Math.random()}
+      options={options}
+      data={data}
+      redraw
+    />
   );
 };

@@ -3,23 +3,6 @@
   border-radius: 10px;
   overflow-x: hidden;
   overflow-y: auto;
-  scrollbar-color: var(--text) var(--header);
-}
-
-.container::-webkit-scrollbar {
-  width: 23px;
-  
-  border-radius: 10px;
-}
-
-.container::-webkit-scrollbar-thumb {
-  background: var(--text);
-  border-right: 20px solid var(--header);
-  border-radius: 1px;
-}
-
-.container::-webkit-scrollbar-track {
-  background: var(--header);
 }
 
 .table {

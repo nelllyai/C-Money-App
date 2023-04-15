@@ -46,7 +46,11 @@ export const List = () => {
 
         <div className={style.sort}>
           <span className={style['sort-title']}>Сортировка:</span>
-          <select className={style.select} value={selectValue} onChange={handleSelectChange}>
+          <select
+            className={style.select}
+            value={selectValue}
+            onChange={handleSelectChange}
+          >
             <option id='account'>Номер счёта</option>
             <option id='balance'>Баланс</option>
             <option id='date'>Дата открытия</option>
