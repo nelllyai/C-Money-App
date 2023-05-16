@@ -10,6 +10,7 @@ export const Button = prop => {
     type,
     children,
     flex,
+    flexEnd,
     paddingVertical,
     paddingVerticalXS,
     paddingHorizontal,
@@ -17,6 +18,7 @@ export const Button = prop => {
     marginBottom,
     marginBottomXS,
     width,
+    maxWidth,
     gap,
     onClick,
   } = prop;
@@ -31,7 +33,9 @@ export const Button = prop => {
     {[style[`margin-bottom-${marginBottom}`]]: marginBottom},
     {[style[`xs-margin-bottom-${marginBottomXS}`]]: marginBottomXS},
     {[style[`width-${width}`]]: width},
+    {[style[`max-width-${maxWidth}`]]: maxWidth},
     {[style.flex]: flex},
+    {[style['flex-end']]: flexEnd},
     {[style[`gap-${gap}`]]: gap},
   );
 
@@ -53,6 +57,7 @@ Button.propTypes = {
     PropTypes.array
   ]),
   flex: PropTypes.bool,
+  flexEnd: PropTypes.bool,
   gap: PropTypes.number,
   paddingVertical: PropTypes.number,
   paddingVerticalXS: PropTypes.number,
@@ -61,5 +66,6 @@ Button.propTypes = {
   marginBottom: PropTypes.number,
   marginBottomXS: PropTypes.number,
   width: PropTypes.number,
+  maxWidth: PropTypes.number,
   onClick: PropTypes.func,
 };

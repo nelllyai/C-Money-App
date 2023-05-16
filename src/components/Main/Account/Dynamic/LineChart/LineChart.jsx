@@ -18,19 +18,29 @@ ChartJS.register(
   Tooltip,
 );
 
-const labels = [];
-
 const options = {
   responsive: true,
   plugins: {
-    legend: {
-      position: 'top',
-    },
+    tooltip: {
+      xAlign: 'center',
+      yAlign: 'bottom',
+      displayColors: false,
+      backgroundColor: '#210B36',
+      bodyFont: {
+        family: 'Nunito',
+        weight: '700',
+        size: 15,
+      },
+      callbacks: {
+        title: () => null,
+        label: context => context.formattedValue + ' ₽',
+      },
+    }
   },
 };
 
 const data = {
-  labels,
+  labels: [],
   datasets: [{
     borderColor: '#B865D6',
   }]
@@ -38,7 +48,7 @@ const data = {
 
 
 export const LineChart = ({ year, transactions }) => {
-  data.datasets[0].data = [];
+  data.labels = [];
 
   data.datasets[0].data = transactions
     .filter(tr => new Date(tr.date).getFullYear() === year)

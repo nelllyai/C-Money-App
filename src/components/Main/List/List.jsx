@@ -7,6 +7,8 @@ import selectSort from '../../../utils/sortAccounts';
 import Button from '../../../UI/Button';
 
 export const List = () => {
+  const token = useSelector(state => state.token.token);
+
   const loading = useSelector(state => state.accounts.loading);
   const accounts = useSelector(state => state.accounts.accounts);
 
@@ -14,7 +16,7 @@ export const List = () => {
 
   useEffect(() => {
     dispatch(accountsRequestAsync());
-  }, []);
+  }, [token]);
 
   const [selectValue, setSelectValue] = useState('Номер счёта');
   const [selectId, setSelectId] = useState('account');

@@ -16,17 +16,14 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (token) return;
+
     if (tokenStorage) {
-      dispatch(tokenSlice.actions.tokenSet({token}));
+      dispatch(tokenSlice.actions.tokenSet({tokenStorage}));
     } else {
       navigate('/auth');
     }
-  }, [tokenStorage]);
-
-  useEffect(() => {
-    if (!token) navigate('/auth');
   }, [token]);
-
 
   return (
     <div className="App">

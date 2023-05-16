@@ -11,7 +11,7 @@ export const tokenSlice = createSlice({
   initialState,
   reducers: {
     tokenSet: (state, action) => {
-      state.token = action.payload.token;
+      state.token = action.payload.tokenStorage;
       state.error = '';
     },
     tokenDelete: state => {

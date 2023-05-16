@@ -1,0 +1,90 @@
+
+
+.wrapper {
+  background-color: var(--header);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  padding: 15px 20px 20px;
+}
+
+.title {
+  font-family: Nunito;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 27px;
+  margin-bottom: 15px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs-wrapper {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  position: relative;
+}
+
+.input-wrapper:not(:last-of-type) {
+  margin-right: 35px;
+}
+
+.label {
+  color: var(--text);
+  font-family: Nunito;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 2px;
+  padding-left: 10px;
+}
+
+.input {
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.input:last-of-type {
+  width: 147px;
+}
+
+.button {
+  align-self: flex-end;
+  font-family: Nunito;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25px;
+  max-width: 150px;
+  padding: 6px 30px;
+}
+
+.form-error {
+  color: tomato;
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: -30px;
+}
+
+@media (max-width: 768px) {
+  .inputs-wrapper {
+    flex-direction: column;
+  }
+
+  .input-wrapper:not(:last-of-type) {
+    margin-right: 0;
+  }
+
+  .input:last-of-type {
+    width: 100%;
+  }
+}

@@ -9,6 +9,8 @@ import Transaction from './Transaction';
 import Dynamic from './Dynamic';
 
 export const Account = () => {
+  const token = useSelector(state => state.token.token);
+
   const { id } = useParams();
   const dispatch = useDispatch();
 
@@ -18,11 +20,11 @@ export const Account = () => {
   const {
     account,
     transactions
-  } = accountInfo;
+  } = accountInfo || {};
 
   useEffect(() => {
-    dispatch(accountRequestAsync(id));
-  }, []);
+    if (token) dispatch(accountRequestAsync(id));
+  }, [token]);
 
   return (
     <div className={style.container}>

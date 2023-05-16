@@ -16,16 +16,18 @@ export const Row = ({ transaction }) => {
   const isOutgoing = from === account;
 
   return (
-    <tr className={isOutgoing ? style.red : undefined}>
+    <tr>
       <td className={style.td}>
         {
           isOutgoing ?
-          to : from
+            to : from
         }
       </td>
       <td className={style['td-middle']}>
-        {isOutgoing && '-'}
-        {amount}
+        <span className={isOutgoing ? style.outgoing : undefined}>
+          {isOutgoing ? '-' : '+'}
+          {amount}
+        </span>
       </td>
       <td className={style['td-date']}>{formatDate(date)}</td>
     </tr>

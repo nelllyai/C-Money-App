@@ -75,6 +75,15 @@
   align-items: center;
 }
 
+.flex-end {
+  align-self: flex-end;
+}
+
+.padding-vertical-6 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
 .padding-vertical-12 {
   padding-top: 12px;
   padding-bottom: 12px;
@@ -97,6 +106,10 @@
 .width-100 {
   max-width: 380px;
   width: 100%;
+}
+
+.max-width-150 {
+  max-width: 150px;
 }
 
 .gap-10 {

@@ -1,16 +1,17 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { URL_API } from '../../api/const';
-import { getToken } from '../../utils/tokenStorage';
 
 export const accountsRequestAsync = createAsyncThunk(
   'accounts/get',
-  () => {
+  (args, {getState}) => {
+    const token = getState().token.token;
+
     return axios(
       `${URL_API}/accounts`,
       {
         headers: {
-          Authorization: `Basic ${getToken()}`,
+          Authorization: `Basic ${token}`,
         },
       })
       .then(({data}) => {
@@ -26,13 +27,15 @@ export const accountsRequestAsync = createAsyncThunk(
 export const accountsCreateAsync = createAsyncThunk(
   'accounts/create-account',
   (args, {getState}) => {
+    const token = getState().token.token;
     const currentAccounts = getState().accounts.accounts;
+
     return axios.post(
       `${URL_API}/create-account`,
       {},
       {
         headers: {
-          Authorization: `Basic ${getToken()}`,
+          Authorization: `Basic ${token}`,
         },
       })
       .then(({data}) => {
