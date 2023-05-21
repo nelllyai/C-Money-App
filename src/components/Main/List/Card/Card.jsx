@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Date } from './Date/Date';
 import { Link } from 'react-router-dom';
 
-export const Card = ({accountInfo}) => {
+export const Card = ({ accountInfo }) => {
   return (
     <li className={style.card}>
       <Link to={`/accounts/${accountInfo.account}`}>
@@ -12,12 +12,12 @@ export const Card = ({accountInfo}) => {
         <div className={style.info}>
           {
             accountInfo.date &&
-              <div>
-                <p>открыт</p>
-                <Date date={accountInfo.date} />
-              </div>
+            <div>
+              <p>открыт</p>
+              <Date date={accountInfo.date} />
+            </div>
           }
-          
+
           {accountInfo.transactions[0] &&
             <div>
               <p>последняя операция</p>

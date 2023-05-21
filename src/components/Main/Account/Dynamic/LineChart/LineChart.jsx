@@ -1,4 +1,3 @@
-import style from './LineChart.module.css';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -7,7 +6,6 @@ import {
   LineElement,
   Tooltip,
 } from 'chart.js';
-import { useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 
 ChartJS.register(

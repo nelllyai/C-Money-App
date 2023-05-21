@@ -1,0 +1,31 @@
+.tr {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 7px;
+}
+
+.td_first {
+  font-family: Nunito;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20px;
+  vertical-align: bottom;
+}
+
+.td_second {
+  border-bottom: 1px solid var(--bgcolor);
+  width: 100%;
+}
+
+.td_third {
+  align-items: center;
+  display: flex;
+  font-family: Nunito;
+  font-size: 15px;
+  font-weight: 700;
+  gap: 5px;
+  justify-content: flex-end;
+  line-height: 100%;
+  margin-top: 20px;
+}

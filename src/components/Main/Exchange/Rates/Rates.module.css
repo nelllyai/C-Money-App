@@ -4,7 +4,8 @@
   display: flex;
   flex-direction: column;
   height: 350px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   padding: 15px 60px 25px 20px;
 }
 
@@ -13,38 +14,6 @@
   font-size: 20px;
   font-weight: 600;
   line-height: 27px;
-}
-
-.tr {
-  align-items: flex-end;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 7px;
-}
-
-.td_first {
-  font-family: Nunito;
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 20px;
-  vertical-align: bottom;
-}
-
-.td_second {
-  border-bottom: 1px solid var(--bgcolor);
-  width: 100%;
-}
-
-.td_third {
-  align-items: center;
-  display: flex;
-  font-family: Nunito;
-  font-size: 15px;
-  font-weight: 700;
-  gap: 5px;
-  justify-content: flex-end;
-  line-height: 100%;
-  margin-top: 20px;
 }
 
 @media (max-width: 768px) {

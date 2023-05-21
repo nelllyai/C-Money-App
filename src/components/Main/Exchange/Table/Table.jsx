@@ -1,7 +1,23 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { Row } from './Row/Row';
 import style from './Table.module.css';
+import { currenciesRequestAsync } from '../../../../store/currencies/currenciesActions';
+import { useEffect } from 'react';
 
 export const Table = () => {
-  console.log(style);
+  const token = useSelector(state => state.token.token);
+
+  const dispatch = useDispatch();
+
+  const loading = useSelector(state => state.currencies.loading);
+  const currencies = useSelector(state => state.currencies.currencies);
+
+  useEffect(() => {
+    if (token) dispatch(currenciesRequestAsync());
+  }, [token]);
+
+  console.log(currencies)
+
   return (
     <table>
       <thead>
@@ -10,22 +26,9 @@ export const Table = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td className={style.code}>AUD</td>
-          <td className={style.amount}>18.16</td>
-        </tr>
-        <tr>
-          <td className={style.code}>BTC</td>
-          <td className={style.amount}>3 081.22</td>
-        </tr>
-        <tr>
-          <td className={style.code}>BYR</td>
-          <td className={style.amount}>48.75</td>
-        </tr>
-        <tr>
-          <td className={style.code}>CAD</td>
-          <td className={style.amount}>251.48</td>
-        </tr>
+        {
+          currencies.map(currency => <Row currency={currency} />)
+        }
       </tbody>
     </table>
   );

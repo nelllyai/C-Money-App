@@ -2,7 +2,7 @@ import { useState } from 'react';
 import style from './Dynamic.module.css';
 import LineChart from './LineChart';
 
-export const Dynamic = ({transactions}) => {
+export const Dynamic = ({ transactions }) => {
   const years = [...new Set(transactions.map(tr => new Date(tr.date).getFullYear()))];
   const [selectYear, setSelectYear] = useState(years[0]);
   const handleSelectChange = event => {

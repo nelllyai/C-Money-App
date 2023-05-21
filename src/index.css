@@ -5,6 +5,7 @@
   src: url(./fonts/comfortaa-v40-cyrillic-700.woff2)
       format('woff2');
 }
+
 @font-face {
   font-family: Nunito;
   font-style: normal;
@@ -12,6 +13,7 @@
   src: url(./fonts/nunito-v24-cyrillic-regular.woff2)
       format('woff2');
 }
+
 @font-face {
   font-family: Nunito;
   font-style: normal;
@@ -19,6 +21,7 @@
   src: url(./fonts/nunito-v24-cyrillic-600.woff2)
       format('woff2');
 }
+
 @font-face {
   font-family: Nunito;
   font-style: normal;
@@ -103,4 +106,9 @@ input {
 
 input:active {
   border-color: var(--bgcolor);
+}
+
+select {
+  font-family: inherit;
+  outline: none;
 }
