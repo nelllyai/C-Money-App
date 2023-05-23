@@ -6,17 +6,12 @@ import { useEffect } from 'react';
 
 export const Table = () => {
   const token = useSelector(state => state.token.token);
-
   const dispatch = useDispatch();
-
-  const loading = useSelector(state => state.currencies.loading);
   const currencies = useSelector(state => state.currencies.currencies);
 
   useEffect(() => {
     if (token) dispatch(currenciesRequestAsync());
   }, [token]);
-
-  console.log(currencies)
 
   return (
     <table>

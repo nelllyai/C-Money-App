@@ -1,8 +1,6 @@
-import style from './ArrowIcon.module.css';
 import PropTypes from 'prop-types';
 
 export const ArrowIcon = ({ up }) => {
-  console.log(style);
   return (
     up ?
       <svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">

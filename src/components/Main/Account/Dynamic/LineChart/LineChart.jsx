@@ -7,6 +7,7 @@ import {
   Tooltip,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import { v4 as uuid } from 'uuid';
 
 ChartJS.register(
   CategoryScale,
@@ -58,7 +59,7 @@ export const LineChart = ({ year, transactions }) => {
 
   return (
     <Line
-      key={Math.random()}
+      key={uuid()}
       options={options}
       data={data}
       redraw

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import style from './Dynamic.module.css';
 import LineChart from './LineChart';
+import { v4 as uuid } from 'uuid';
 
 export const Dynamic = ({ transactions }) => {
   const years = [...new Set(transactions.map(tr => new Date(tr.date).getFullYear()))];
@@ -21,7 +22,7 @@ export const Dynamic = ({ transactions }) => {
           onChange={handleSelectChange}
         >
           {
-            years.map(year => <option key={year}>{year}</option>)
+            years.map(year => <option key={uuid()}>{year}</option>)
           }
         </select>
       </div>
