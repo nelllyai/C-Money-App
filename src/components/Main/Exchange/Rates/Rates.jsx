@@ -3,6 +3,7 @@ import { Item } from './Item/Item';
 import style from './Rates.module.css';
 import { WEBSOCKET_URL_API } from '../../../../api/const';
 import { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 
 export const Rates = () => {
   const [changes, setChanges] = useState([]);
@@ -19,7 +20,7 @@ export const Rates = () => {
     <div className={style.wrapper}>
       <h3 className={style.title}>Изменение курса в режиме реального времени</h3>
       <div>
-        {changes.reverse().map(change => <Item change={change} />)}
+        {changes.reverse().map(change => <Item change={change} key={uuid()} />)}
       </div>
     </div>
   );

@@ -2,9 +2,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from '../../../../UI/Button';
 import style from './Form.module.css';
 import { useEffect } from 'react';
-import { currenciesRequestAsync } from '../../../../store/currencies/currenciesActions';
+import { currenciesBuyAsync, currenciesRequestAsync } from '../../../../store/currencies/currenciesActions';
 import { allCurrenciesRequestAsync } from '../../../../store/allCurrencies/allCurrenciesActions';
 import { v4 as uuid } from 'uuid';
+import { useForm } from 'react-hook-form';
 
 export const Form = () => {
   const token = useSelector(state => state.token.token);
@@ -19,14 +20,41 @@ export const Form = () => {
     }
   }, [token]);
 
+  const buyError = useSelector(state => state.currencies.error);
+
+  const {
+    reset,
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm();
+
+  useEffect(() => {
+    let defaultValues = {};
+    console.log(userCurrencies);
+    console.log(allCurrencies);
+    defaultValues.from =
+      [...userCurrencies]
+        .filter(currency => currency.amount)[0].code;
+    defaultValues.to =
+      [...allCurrencies]
+        .sort()[0];
+    reset({ ...defaultValues });
+  }, [userCurrencies, allCurrencies]);
+
+  const onSubmit = data => {
+    console.log(data);
+    dispatch(currenciesBuyAsync(data));
+  };
+
   return (
     <div className={style.wrapper}>
       <h3 className={style.title}>Обмен валюты</h3>
-      <form className={style.form}>
+      <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
         <div className={style['inputs-wrapper']}>
           <div className={style['input-wrapper']}>
             <label className={style.label}>Откуда</label>
-            <select className={style.input} name="from">
+            <select className={style.input} {...register('from')}>
               {[...allCurrencies]
                 .sort()
                 .map(currency => <option key={uuid()}>{currency}</option>)}
@@ -35,18 +63,29 @@ export const Form = () => {
 
           <div className={style['input-wrapper']}>
             <label className={style.label}>Куда</label>
-            <select className={style.input} name="to">
+            <select className={style.input} {...register('to')}>
               {[...userCurrencies]
                 .filter(currency => currency.amount)
-                .sort()
                 .map(currency => <option key={uuid()}>{currency.code}</option>)}
             </select>
           </div>
 
           <div className={style['input-wrapper']}>
-            <span className={style['form-error']}></span>
+            <span className={style['form-error']}>
+              {errors.amount && errors.amount.message}
+            </span>
             <label className={style.label}>Сумма</label>
-            <input className={style.input} name="amount" />
+            <input
+              className={style.input}
+              {...register('amount', {
+                required: 'Заполните это поле',
+                pattern: {
+                  value: /^([0-9]*[.])?[0-9]+$/,
+                  message: 'Некорректная сумма'
+                }
+              })}
+              type="text"
+            />
           </div>
         </div>
 
@@ -58,6 +97,8 @@ export const Form = () => {
         >
           Обменять
         </Button>
+
+        {buyError && <p className={style['submit-error']}>{buyError}</p>}
       </form>
     </div>
 

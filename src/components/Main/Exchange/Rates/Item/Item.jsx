@@ -1,11 +1,10 @@
 import { ArrowIcon } from './ArrowIcon/ArrowIcon';
 import style from './Item.module.css';
 import PropTypes from 'prop-types';
-import { v4 as uuid } from 'uuid';
 
 export const Item = ({ change }) => {
   return (
-    <div className={style.tr} key={uuid()}>
+    <div className={style.tr}>
       <span className={style['td_first']}>
         {change.from}/{change.to}
       </span>

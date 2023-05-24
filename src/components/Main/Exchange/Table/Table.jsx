@@ -3,6 +3,7 @@ import { Row } from './Row/Row';
 import style from './Table.module.css';
 import { currenciesRequestAsync } from '../../../../store/currencies/currenciesActions';
 import { useEffect } from 'react';
+import { v4 as uuid } from 'uuid';
 
 export const Table = () => {
   const token = useSelector(state => state.token.token);
@@ -22,7 +23,7 @@ export const Table = () => {
       </thead>
       <tbody>
         {
-          currencies.map(currency => <Row currency={currency} />)
+          currencies.map(currency => <Row currency={currency} key={uuid()} />)
         }
       </tbody>
     </table>
