@@ -1,6 +1,6 @@
 # C-Money Приложение (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Проект был создан с помощью [Create React App](https://github.com/facebook/create-react-app).
 
 ## Запуск сервера
 
@@ -17,9 +17,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### `npm start`
 
+Чтобы запустить сборку приложения, нужно выполнить команду:
+
+### `npm build`
+
+Далее можно запустить получившуюся сборку с помощью команды:
+
+### `serve -s build`
+
 На данный момент доступен вход только в следующий аккаунт:
 
-* Логин: **developer**
-* Пароль: **methed**
+* логин: **developer**
+* пароль: **methed**
 
 Приятного пользования!
