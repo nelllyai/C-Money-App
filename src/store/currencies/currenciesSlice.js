@@ -30,8 +30,9 @@ export const currenciesSlice = createSlice({
       state.error = action.payload.error;
       state.loading = false;
     },
-    [currenciesBuyAsync.rejected.type]: state => {
+    [currenciesBuyAsync.rejected.type]: (state, action) => {
       state.loading = false;
+      state.error = action.payload.error;
     },
   }
 });

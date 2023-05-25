@@ -9,6 +9,7 @@ export const Transaction = () => {
   const dispatch = useDispatch();
 
   const {
+    reset,
     register,
     handleSubmit,
     formState: { errors }
@@ -16,6 +17,7 @@ export const Transaction = () => {
 
   const onSubmit = data => {
     dispatch(transferPostAsync(data));
+    reset();
   };
 
   return (

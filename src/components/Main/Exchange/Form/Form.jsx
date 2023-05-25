@@ -31,20 +31,18 @@ export const Form = () => {
 
   useEffect(() => {
     let defaultValues = {};
-    console.log(userCurrencies);
-    console.log(allCurrencies);
     defaultValues.from =
       [...userCurrencies]
-        .filter(currency => currency.amount)[0].code;
+        .filter(currency => currency.amount)[0]?.code || '';
     defaultValues.to =
       [...allCurrencies]
-        .sort()[0];
+        .sort()[0] || '';
     reset({ ...defaultValues });
   }, [userCurrencies, allCurrencies]);
 
   const onSubmit = data => {
-    console.log(data);
     dispatch(currenciesBuyAsync(data));
+    reset();
   };
 
   return (

@@ -7,6 +7,7 @@ import style from './Account.module.css';
 import Table from './Table';
 import Transaction from './Transaction';
 import Dynamic from './Dynamic';
+import { Preloader } from '../../Preloader/Preloader';
 
 export const Account = () => {
   const token = useSelector(state => state.token.token);
@@ -52,7 +53,7 @@ export const Account = () => {
       </div>
       {
         loading || !account ?
-          <p>Загрузка...</p> :
+          <Preloader /> :
           <>
             {
               transactions.length > 0 && <Dynamic transactions={transactions} />

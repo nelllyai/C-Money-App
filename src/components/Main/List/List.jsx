@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { accountsCreateAsync, accountsRequestAsync } from '../../../store/accounts/accountsActions';
 import selectSort from '../../../utils/sortAccounts';
 import Button from '../../../UI/Button';
+import { Preloader } from '../../Preloader/Preloader';
 
 export const List = () => {
   const token = useSelector(state => state.token.token);
@@ -63,7 +64,7 @@ export const List = () => {
         <ul className={style.list}>
           {
             loading || !accounts ?
-              <p>Загрузка...</p>
+              <Preloader />
               :
               selectSort(accounts, selectId).map(account => (
                 <Card key={account.account} accountInfo={account} />

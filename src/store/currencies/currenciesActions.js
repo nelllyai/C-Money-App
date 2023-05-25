@@ -26,6 +26,7 @@ export const currenciesBuyAsync = createAsyncThunk(
   'currencies/buy',
   ({ from, to, amount }, { getState }) => {
     const token = getState().token.token;
+    const currentCurrencies = getState().currencies.currencies;
 
     return axios.post(
       `${URL_API}/currency-buy`,
@@ -40,8 +41,10 @@ export const currenciesBuyAsync = createAsyncThunk(
         },
       })
       .then(({ data }) => {
-        console.log(data.payload);
-        const currencies = Object.values(data.payload);
+        const currencies =
+          data.payload === null ?
+            currentCurrencies :
+            Object.values(data.payload);
         const error = data.error;
 
         return { currencies, error };
