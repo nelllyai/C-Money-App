@@ -18,6 +18,11 @@
   transition: background 0.3s;
 }
 
+.button:disabled {
+  pointer-events: none;
+  background: gray;
+}
+
 .button:hover::before {
   opacity: 1;
 }

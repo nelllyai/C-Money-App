@@ -28,8 +28,6 @@ export const transferPostAsync = createAsyncThunk(
     const token = getState().token.token;
     const currentAccount = getState().account.account.account;
 
-    console.log(currentAccount);
-
     const { to, amount } = transactionInfo;
 
     return axios.post(

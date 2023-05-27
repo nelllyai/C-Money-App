@@ -21,6 +21,7 @@ export const Button = prop => {
     maxWidth,
     gap,
     onClick,
+    disabled,
   } = prop;
 
   const classes = classNames(
@@ -42,7 +43,7 @@ export const Button = prop => {
   return (
     link ?
     <Link to={link} className={classes}>{children}</Link> :
-    <button className={classes} type={type} onClick={onClick}>{children}</button>
+    <button className={classes} type={type} onClick={onClick} disabled={disabled}>{children}</button>
   );
 };
 

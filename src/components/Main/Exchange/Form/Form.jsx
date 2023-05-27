@@ -92,6 +92,7 @@ export const Form = () => {
           paddingHorizontal={30}
           maxWidth={150}
           flexEnd
+          disabled
         >
           Обменять
         </Button>

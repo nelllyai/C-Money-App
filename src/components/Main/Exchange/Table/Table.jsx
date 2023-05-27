@@ -26,8 +26,12 @@ export const Table = () => {
       <tbody>
         {
           loading ?
-          <Preloader inTable /> :
-          currencies.map(currency => <Row currency={currency} key={uuid()} />)
+            <tr>
+              <td>
+                <Preloader inTable />
+              </td>
+            </tr> :
+            currencies.map(currency => <Row currency={currency} key={uuid()} />)
         }
       </tbody>
     </table>
