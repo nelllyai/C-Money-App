@@ -57,7 +57,7 @@ export const LineChart = ({ year, transactions }) => {
       transactions
         .filter(tr => new Date(tr.date).getFullYear() === year)
         .filter(tr => new Date(tr.date).getMonth() === i)
-        .slice(-1)[0];
+        .at(-1);
     
     if (lastTransferInMonth !== undefined) lastTransfers.push(lastTransferInMonth);
   }
