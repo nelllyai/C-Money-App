@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import formatDate from '../../../../../utils/formatDate';
 import style from './Row.module.css';
 import PropTypes from 'prop-types';
+import { round } from '../../../../../utils/round';
 
 export const Row = ({ transaction }) => {
   const account = useSelector(state => state.account.account).account;
@@ -26,7 +27,7 @@ export const Row = ({ transaction }) => {
       <td className={style['td-middle']}>
         <span className={isOutgoing ? style.outgoing : undefined}>
           {isOutgoing ? '-' : '+'}
-          {amount}
+          {round(amount)}
         </span>
       </td>
       <td className={style['td-date']}>{formatDate(date)}</td>
