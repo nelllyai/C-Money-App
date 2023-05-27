@@ -26,8 +26,12 @@ export const Form = () => {
     reset,
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
+    watch
   } = useForm();
+
+  const from = watch('from');
+  const to = watch('to');
 
   useEffect(() => {
     let defaultValues = {};
@@ -52,19 +56,31 @@ export const Form = () => {
         <div className={style['inputs-wrapper']}>
           <div className={style['input-wrapper']}>
             <label className={style.label}>Откуда</label>
-            <select className={style.input} {...register('from')}>
+            <select
+              className={style.input}
+              {...register('from')}
+              value={from}
+            >
               {[...allCurrencies]
                 .sort()
-                .map(currency => <option key={uuid()}>{currency}</option>)}
+                .map(currency =>
+                  <option value={currency} key={uuid()}>{currency}</option>
+                )}
             </select>
           </div>
 
           <div className={style['input-wrapper']}>
             <label className={style.label}>Куда</label>
-            <select className={style.input} {...register('to')}>
+            <select
+              className={style.input}
+              {...register('to')}
+              value={to}
+            >
               {[...userCurrencies]
                 .filter(currency => currency.amount)
-                .map(currency => <option key={uuid()}>{currency.code}</option>)}
+                .map(currency =>
+                  <option value={currency.code} key={uuid()}>{currency.code}</option>
+                )}
             </select>
           </div>
 
@@ -92,7 +108,7 @@ export const Form = () => {
           paddingHorizontal={30}
           maxWidth={150}
           flexEnd
-          disabled
+          disabled={to === from}
         >
           Обменять
         </Button>
